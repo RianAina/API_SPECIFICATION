@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: API d'Onboarding Ajout de Données Texte
+  version: 1.0.0
+servers:
+  - url: http://STD22074.com
+paths:
+  /students:
+    get:
+      summary: Insertion des données 
+      responses:
+        '200':
+          description: Succès 
+          content:
+            application/json:
+              example:
+                - id: 1
+                  Donnée1: First
+                  Donnée2: Second
+                - id: 2
+                  Donnée1: Third
+                  Donnée2: Fourth
+        '500':
+          description: Erreur 
+
+    post:
+summary: Création de nouvelles données
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nom:
+                  type: string
+                prenom:
+                  type: string
+      responses:
+        '200':
+          description: Succès 
+          content:
+            application/json:
+              example:
+                id: 3
+                Donnée1: Exemple01
+                Donnée2: Exemple02
+'500':
+          description: Erreur
