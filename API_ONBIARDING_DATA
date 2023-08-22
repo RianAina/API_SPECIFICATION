@@ -24,7 +24,7 @@ paths:
           description: Erreur 
 
     post:
-      summary: Création de nouvelles données pour un élève
+      summary: Création de nouvelles données
       requestBody:
         required: true
         content:
@@ -48,26 +48,14 @@ paths:
         '500':
           description: Erreur
 
-  /teachers:
-    get:
-      summary: Récupération des enseignants
-      responses:
-        '200':
-          description: Succès 
-          content:
-            application/json:
-              example:
-                - id: 101
-                  Nom: Jean
-                  Prénom: Dupont
-                - id: 102
-                  Nom: Marie
-                  Prénom: Martin
-        '500':
-          description: Erreur
-
-    post:
-      summary: Création de nouvelles données pour un enseignant
+    put:
+      summary: Mise à jour des données d'un élève
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -85,8 +73,24 @@ paths:
           content:
             application/json:
               example:
-                id: 103
-                Nom: Paul
-                Prénom: Dupuis
+                message: Données mises à jour avec succès
+        '500':
+          description: Erreur
+
+    delete:
+      summary: Suppression des données d'un élève
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Succès 
+          content:
+            application/json:
+              example:
+                message: Données supprimées avec succès
         '500':
           description: Erreur
