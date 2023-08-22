@@ -3,7 +3,7 @@ info:
   title: API d'Onboarding Ajout de Données Texte
   version: 1.0.0
 servers:
-  - url: http://STD22074.com
+  - url: http://STD22000.com
 paths:
   /students:
     get:
@@ -15,7 +15,7 @@ paths:
             application/json:
               example:
                 - id: 1
-                  Donnée1: Rian'Aina
+                  Donnée1: RianAina
                   Donnée2: Rabearivelo
                 - id: 2
                   Donnée1: Valery
@@ -94,4 +94,3 @@ paths:
                 message: Données supprimées avec succès
         '500':
           description: Erreur
-
