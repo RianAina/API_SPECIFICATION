@@ -7,7 +7,7 @@ servers:
 paths:
   /students:
     get:
-      summary: Insertion des eleves
+      summary: Récupération des élèves
       responses:
         '200':
           description: Succès 
@@ -24,7 +24,7 @@ paths:
           description: Erreur 
 
     post:
-summary: Création de nouvelles données
+      summary: Création de nouvelles données
       requestBody:
         required: true
         content:
@@ -45,5 +45,52 @@ summary: Création de nouvelles données
                 id: 3
                 Donnée1: John
                 Donnée2: Doe
-'500':
+        '500':
+          description: Erreur
+
+    put:
+      summary: Mise à jour des données d'un élève
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nom:
+                  type: string
+                prenom:
+                  type: string
+      responses:
+        '200':
+          description: Succès 
+          content:
+            application/json:
+              example:
+                message: Données mises à jour avec succès
+        '500':
+          description: Erreur
+
+    delete:
+      summary: Suppression des données d'un élève
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Succès 
+          content:
+            application/json:
+              example:
+                message: Données supprimées avec succès
+        '500':
           description: Erreur
