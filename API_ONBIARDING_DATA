@@ -7,7 +7,7 @@ servers:
 paths:
   /students:
     get:
-      summary: Insertion des données 
+      summary: Insertion des eleves
       responses:
         '200':
           description: Succès 
@@ -15,11 +15,11 @@ paths:
             application/json:
               example:
                 - id: 1
-                  Donnée1: First
-                  Donnée2: Second
+                  Donnée1: Rian'Aina
+                  Donnée2: Rabearivelo
                 - id: 2
-                  Donnée1: Third
-                  Donnée2: Fourth
+                  Donnée1: Valery
+                  Donnée2: Rabearivelo
         '500':
           description: Erreur 
 
@@ -43,7 +43,7 @@ summary: Création de nouvelles données
             application/json:
               example:
                 id: 3
-                Donnée1: Exemple01
-                Donnée2: Exemple02
+                Donnée1: John
+                Donnée2: Doe
 '500':
           description: Erreur
