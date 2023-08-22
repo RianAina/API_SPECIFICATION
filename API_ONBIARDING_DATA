@@ -94,3 +94,46 @@ paths:
                 message: Données supprimées avec succès
         '500':
           description: Erreur
+
+ /teachers:
+    get:
+      summary: Récupération des enseignants
+      responses:
+        '200':
+          description: Succès 
+          content:
+            application/json:
+              example:
+                - id: 101
+                  Nom: Jean
+                  Prénom: Dupont
+                - id: 102
+                  Nom: Mr
+                  Prénom: Toky
+        '500':
+          description: Erreur
+
+    post:
+      summary: Création de nouvelles données pour un enseignant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nom:
+                  type: string
+                prenom:
+                  type: string
+      responses:
+        '200':
+          description: Succès 
+          content:
+            application/json:
+              example:
+                id: 103
+                Nom: Mr
+                Prénom: Lou
+        '500':
+          description: Erreur
